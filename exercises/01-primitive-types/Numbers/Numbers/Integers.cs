@@ -77,7 +77,7 @@ namespace Numbers
         internal static int CubeWithoutOverflowCheck(int x)
         {
             // если сделал предыдущие, то с этим уже должно быть понятно.
-            return unchecked(Cube(x));
+            return unchecked(x * x * x);
             // https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/unchecked
         }
 
@@ -109,7 +109,7 @@ namespace Numbers
                 Продолжай идти простым путем -нужен метод, обратный методу ToString выше, который распарсит дефолтное строковое представление числа.
                 Подсказка: у каждого примитивного типа есть набор статических методов, среди которых есть нужный.
             */
-            return Int32.TryParse(s, out int result) ? result : result;
+            return Int32.Parse(s);
             // https://docs.microsoft.com/en-us/dotnet/standard/base-types/parsing-numeric
         }
 
@@ -122,7 +122,7 @@ namespace Numbers
                 Реализуй умножение числа на 10 без использования арифметических операций над числами.
                 Воспользуйся реализованными выше методами ToString и Parse. И не думай ни о каких переполнениях - задача не на это :)
             */
-            return Parse(x.ToString() + "0");
+            return Parse(ToString(x) + "0");
             // почему на TryParse без Int32 ругается, а на Parse - нет?
         }
 

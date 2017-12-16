@@ -86,10 +86,10 @@ namespace BoringVector
 
         /// <summary>
         /// Магическая константа, данная свыше. </summary>
-        private const double _Precision = 1e-6;
+        private const double InitialPrecision = 1e-6;
 
         /// <summary>
         /// Атрибут, отвечающий за точность вычислений. </summary>
-        public static double Precision { get; set; } = _Precision;
+        public static double Precision { get; set; } = InitialPrecision;
     }
 }

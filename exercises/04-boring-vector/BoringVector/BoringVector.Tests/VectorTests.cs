@@ -6,7 +6,7 @@ namespace BoringVector.Tests
 {
     public class VectorTests
     {
-        internal class VectorComparer : IEqualityComparer<Vector>
+        private class VectorComparer : IEqualityComparer<Vector>
         {
             public bool Equals(Vector firstVector, Vector secondVector)
             {

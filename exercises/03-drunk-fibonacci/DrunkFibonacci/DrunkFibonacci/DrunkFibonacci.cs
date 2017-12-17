@@ -96,7 +96,8 @@ namespace DrunkFibonacci
                     }
 
                     var goldenRatio = (1 + Math.Sqrt(5)) / 2;
-                    var nthFibonacciNumber = unchecked((long)((Math.Pow(goldenRatio, n) - Math.Pow(-goldenRatio, -n)) / Math.Sqrt(5) % Int64.MaxValue));
+                    var nthFibonacciNumber = unchecked((long)((Math.Pow(goldenRatio, n) - Math.Pow(-goldenRatio, -n)) /
+                                                               Math.Sqrt(5) % Int64.MaxValue));
                     if ((enumeratorOfRandomSequence.Current & 42) == 42) {
                         nthFibonacciNumber &= ~42;
                     }
@@ -151,8 +152,7 @@ namespace DrunkFibonacci
         {
             // ничему особо не научишься, просто интересная задачка :)
             var batch = new List<long>(16);
-            var drunkFibonacciSequence = GetDrunkFibonacci();
-            foreach (var number in drunkFibonacciSequence) {
+            foreach (var number in GetDrunkFibonacci()) {
                 batch.Add(number);
                 if (batch.Count == 16) {
                     yield return batch.ToArray();
